@@ -4,12 +4,13 @@
 }
 
 .bodyLeft {
-  background: white;
+  display: flex;
+  flex-direction: column;
   flex: 1;
+  margin-right: 1em;
 }
 
 .bodyRight {
-  background: white;
   width: 255px;
 }
 
@@ -19,6 +20,7 @@
   color: white;
   display: flex;
   height: 50px;
+  padding: 0 1em;
 }
 
 .header {
@@ -27,4 +29,13 @@
   color: white;
   display: flex;
   height: 50px;
+  padding: 0 1em;
+}
+
+.headerBar {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  height: 50px;
+  padding: 0 1em;
 }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styles from './Pages.css';
+import CurrentProduct from '../../product/components/CurrentProduct';
 import Header from '../../shared/components/Header';
+import HeaderBar from '../../shared/components/HeaderBar';
 import Footer from '../../shared/components/Footer';
 import Body from '../../shared/components/Body';
 import BodyLeft from '../../shared/components/BodyLeft';
@@ -13,14 +15,19 @@ const Home = () => (
     </Header>
     <Body>
       <BodyLeft>
-        <p>Body left here...</p>
+        <HeaderBar>
+        </HeaderBar>
+        <div>
+          <CurrentProduct />
+          
+        </div>
       </BodyLeft>
       <BodyRight>
-        <p>Body right here...</p>
+        <HeaderBar>
+        </HeaderBar>
       </BodyRight>
     </Body>
     <Footer>
-      <p>Footer here...</p>
     </Footer>
   </section>
 )

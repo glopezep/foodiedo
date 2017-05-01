@@ -11108,9 +11108,17 @@ var _Pages = __webpack_require__(237);
 
 var _Pages2 = _interopRequireDefault(_Pages);
 
+var _CurrentProduct = __webpack_require__(242);
+
+var _CurrentProduct2 = _interopRequireDefault(_CurrentProduct);
+
 var _Header = __webpack_require__(101);
 
 var _Header2 = _interopRequireDefault(_Header);
+
+var _HeaderBar = __webpack_require__(241);
+
+var _HeaderBar2 = _interopRequireDefault(_HeaderBar);
 
 var _Footer = __webpack_require__(100);
 
@@ -11149,31 +11157,20 @@ var Home = function Home() {
       _react2.default.createElement(
         _BodyLeft2.default,
         null,
+        _react2.default.createElement(_HeaderBar2.default, null),
         _react2.default.createElement(
-          'p',
+          'div',
           null,
-          'Body left here...'
+          _react2.default.createElement(_CurrentProduct2.default, null)
         )
       ),
       _react2.default.createElement(
         _BodyRight2.default,
         null,
-        _react2.default.createElement(
-          'p',
-          null,
-          'Body right here...'
-        )
+        _react2.default.createElement(_HeaderBar2.default, null)
       )
     ),
-    _react2.default.createElement(
-      _Footer2.default,
-      null,
-      _react2.default.createElement(
-        'p',
-        null,
-        'Footer here...'
-      )
-    )
+    _react2.default.createElement(_Footer2.default, null)
   );
 };
 
@@ -13179,7 +13176,7 @@ exports = module.exports = __webpack_require__(106)(undefined);
 
 
 // module
-exports.push([module.i, "._196fofSl_NT7XC3Xth9rFV {\n  display: flex;\n  flex: 1;\n}\n\n._3GlEluQeo8Tk6EQf2V3OjL {\n  background: white;\n  flex: 1;\n}\n\n.x33vwsm_wUqy0rURwyQjD {\n  background: white;\n  width: 255px;\n}\n\n._1OB4ZV6BHT2Wu-AkaLrDtH {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n}\n\n._1-XIDGjPQfqpr4t6-wcbVz {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n}\n", ""]);
+exports.push([module.i, "._196fofSl_NT7XC3Xth9rFV {\n  display: flex;\n  flex: 1;\n}\n\n._3GlEluQeo8Tk6EQf2V3OjL {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  margin-right: 1em;\n}\n\n.x33vwsm_wUqy0rURwyQjD {\n  width: 255px;\n}\n\n._1OB4ZV6BHT2Wu-AkaLrDtH {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._1-XIDGjPQfqpr4t6-wcbVz {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._3xDBnaFrhDSnwdvUFh-Vw_ {\n  align-items: center;\n  background-color: #fff;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -13187,7 +13184,8 @@ exports.locals = {
 	"bodyLeft": "_3GlEluQeo8Tk6EQf2V3OjL",
 	"bodyRight": "x33vwsm_wUqy0rURwyQjD",
 	"footer": "_1OB4ZV6BHT2Wu-AkaLrDtH",
-	"header": "_1-XIDGjPQfqpr4t6-wcbVz"
+	"header": "_1-XIDGjPQfqpr4t6-wcbVz",
+	"headerBar": "_3xDBnaFrhDSnwdvUFh-Vw_"
 };
 
 /***/ }),
@@ -28196,6 +28194,113 @@ var BodyRight = function BodyRight(props) {
 };
 
 exports.default = BodyRight;
+
+/***/ }),
+/* 241 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Shared = __webpack_require__(95);
+
+var _Shared2 = _interopRequireDefault(_Shared);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var HeaderBar = function HeaderBar(props) {
+  return _react2.default.createElement(
+    'header',
+    { className: _Shared2.default.headerBar },
+    props.children
+  );
+};
+
+exports.default = HeaderBar;
+
+/***/ }),
+/* 242 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _CurrentProduct = __webpack_require__(244);
+
+var _CurrentProduct2 = _interopRequireDefault(_CurrentProduct);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CurrentProduct = function CurrentProduct(props) {
+  return _react2.default.createElement(
+    'article',
+    { className: _CurrentProduct2.default.container },
+    _react2.default.createElement('div', { className: _CurrentProduct2.default.image }),
+    _react2.default.createElement('footer', { className: _CurrentProduct2.default.footer })
+  );
+};
+
+exports.default = CurrentProduct;
+
+/***/ }),
+/* 243 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(106)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "._3Aq0QQhf7UYzQHMGFM9yEM {}\n._2nii3eXgZbuuE_qw5zQXnq {}\n._3PxE231UJ0oAlfowEml0R_ {}\n", ""]);
+
+// exports
+exports.locals = {
+	"container": "_3Aq0QQhf7UYzQHMGFM9yEM",
+	"footer": "_2nii3eXgZbuuE_qw5zQXnq",
+	"image": "_3PxE231UJ0oAlfowEml0R_"
+};
+
+/***/ }),
+/* 244 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(243);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(232)(content, {"sourceMap":true});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules!./CurrentProduct.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js?modules!./CurrentProduct.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

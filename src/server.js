@@ -3,7 +3,8 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { renderHtml } from './lib/utils';
-import Pages from './pages/components/Pages'
+import Pages from './pages/components/Pages';
+import Loading from './shared/components/Loading';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -13,7 +14,7 @@ app.use((req, res) => {
 
   const html = renderToStaticMarkup(
     <StaticRouter location={req.url} context={context}>
-      <Pages />
+      <Loading />
     </StaticRouter>
   );
 
