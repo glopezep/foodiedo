@@ -11518,6 +11518,10 @@ var _ProductBox = __webpack_require__(103);
 
 var _ProductBox2 = _interopRequireDefault(_ProductBox);
 
+var _OrderBox = __webpack_require__(258);
+
+var _OrderBox2 = _interopRequireDefault(_OrderBox);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Home = function Home() {
@@ -11550,7 +11554,8 @@ var Home = function Home() {
       _react2.default.createElement(
         _BodyRight2.default,
         null,
-        _react2.default.createElement(_HeaderBar2.default, null)
+        _react2.default.createElement(_HeaderBar2.default, null),
+        _react2.default.createElement(_OrderBox2.default, null)
       )
     ),
     _react2.default.createElement(_Footer2.default, null)
@@ -13901,7 +13906,7 @@ exports = module.exports = __webpack_require__(39)(undefined);
 
 
 // module
-exports.push([module.i, "._196fofSl_NT7XC3Xth9rFV {\n  display: flex;\n  flex: 1;\n}\n\n._3GlEluQeo8Tk6EQf2V3OjL {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  margin-right: 1em;\n}\n\n.x33vwsm_wUqy0rURwyQjD {\n  width: 255px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD {\n  border: none;\n  background-color: #d95459;\n  color: #fff;\n  cursor: pointer;\n  font-size: .9em;\n  padding: 1em 0;\n  text-transform: uppercase;\n  width: 125px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD:hover {\n  background-color: #a64347;\n}\n\n._1OB4ZV6BHT2Wu-AkaLrDtH {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._1-XIDGjPQfqpr4t6-wcbVz {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._3xDBnaFrhDSnwdvUFh-Vw_ {\n  align-items: center;\n  background-color: #fff;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n", ""]);
+exports.push([module.i, "._196fofSl_NT7XC3Xth9rFV {\n  display: flex;\n  flex: 1;\n  padding: 1em;\n}\n\n._3GlEluQeo8Tk6EQf2V3OjL {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  margin-right: 1em;\n}\n\n.x33vwsm_wUqy0rURwyQjD {\n  width: 255px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD {\n  border: none;\n  background-color: #d95459;\n  color: #fff;\n  cursor: pointer;\n  font-size: .9em;\n  padding: 1em 0;\n  text-transform: uppercase;\n  width: 125px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD:hover {\n  background-color: #a64347;\n}\n\n._1OB4ZV6BHT2Wu-AkaLrDtH {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._1-XIDGjPQfqpr4t6-wcbVz {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._3xDBnaFrhDSnwdvUFh-Vw_ {\n  align-items: center;\n  background-color: #fff;\n  display: flex;\n  height: 50px;\n  margin-bottom: 1em;\n  padding: 0 1em;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -28582,7 +28587,7 @@ exports = module.exports = __webpack_require__(39)(undefined);
 
 
 // module
-exports.push([module.i, "._1O_1u4kGSYEPpZCFKxlW0k {\n  background-color: #636f80;\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  margin: .25em 0;\n  padding: .5em;\n  width: 45%;\n}\n\n._1O_1u4kGSYEPpZCFKxlW0k:nth-child(1), ._1O_1u4kGSYEPpZCFKxlW0k:nth-child(2) {\n  margin-top: 0;\n}\n\n._1O_1u4kGSYEPpZCFKxlW0k:nth-child(5), ._1O_1u4kGSYEPpZCFKxlW0k:nth-child(6) {\n  margin-bottom: 0;\n}\n", ""]);
+exports.push([module.i, "._1O_1u4kGSYEPpZCFKxlW0k {\n  background-color: #636f80;\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  margin: .5em 0;\n  padding: .5em;\n  width: 45%;\n}\n\n._1O_1u4kGSYEPpZCFKxlW0k:nth-child(1), ._1O_1u4kGSYEPpZCFKxlW0k:nth-child(2) {\n  margin-top: 0;\n}\n\n._1O_1u4kGSYEPpZCFKxlW0k:nth-child(5), ._1O_1u4kGSYEPpZCFKxlW0k:nth-child(6) {\n  margin-bottom: 0;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -28691,6 +28696,167 @@ if(false) {
 	if(!content.locals) {
 		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules!./ProductPagination.css", function() {
 			var newContent = require("!!../../../node_modules/css-loader/index.js?modules!./ProductPagination.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 258 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _OrderProductList = __webpack_require__(260);
+
+var _OrderProductList2 = _interopRequireDefault(_OrderProductList);
+
+var _Button = __webpack_require__(250);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var OrderBox = function OrderBox(props) {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(_OrderProductList2.default, null),
+    _react2.default.createElement(
+      _Button2.default,
+      null,
+      'Order'
+    )
+  );
+};
+
+exports.default = OrderBox;
+
+/***/ }),
+/* 259 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _OrderProduct = __webpack_require__(262);
+
+var _OrderProduct2 = _interopRequireDefault(_OrderProduct);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var OrderProduct = function OrderProduct(props) {
+  return _react2.default.createElement(
+    'article',
+    { className: _OrderProduct2.default.container },
+    _react2.default.createElement(
+      'span',
+      null,
+      'Orange Juice'
+    ),
+    _react2.default.createElement(
+      'span',
+      null,
+      'RD$120'
+    ),
+    _react2.default.createElement(
+      'span',
+      null,
+      'X'
+    )
+  );
+};
+
+exports.default = OrderProduct;
+
+/***/ }),
+/* 260 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _OrderProduct = __webpack_require__(259);
+
+var _OrderProduct2 = _interopRequireDefault(_OrderProduct);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var OrderProductList = function OrderProductList(props) {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(_OrderProduct2.default, null),
+    _react2.default.createElement(_OrderProduct2.default, null),
+    _react2.default.createElement(_OrderProduct2.default, null),
+    _react2.default.createElement(_OrderProduct2.default, null)
+  );
+};
+
+exports.default = OrderProductList;
+
+/***/ }),
+/* 261 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(39)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "._2v2nlioD4Ky_1HvUWXYkhS {\n  display: flex;\n  justify-content: space-between;\n  line-height: 40px;\n  padding: 0 1em;\n}\n\n._2v2nlioD4Ky_1HvUWXYkhS:nth-child(odd) {\n  background: #fff;\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"container": "_2v2nlioD4Ky_1HvUWXYkhS"
+};
+
+/***/ }),
+/* 262 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(261);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(62)(content, {"sourceMap":true});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules!./OrderProduct.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js?modules!./OrderProduct.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});

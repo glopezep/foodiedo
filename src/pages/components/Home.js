@@ -8,6 +8,7 @@ import Body from '../../shared/components/Body';
 import BodyLeft from '../../shared/components/BodyLeft';
 import BodyRight from '../../shared/components/BodyRight';
 import ProductBox from '../../product/components/ProductBox';
+import OrderBox from '../../order/components/OrderBox';
 
 const Home = () => (
   <section className={styles.home}>
@@ -24,6 +25,7 @@ const Home = () => (
       </BodyLeft>
       <BodyRight>
         <HeaderBar />
+        <OrderBox />
       </BodyRight>
     </Body>
     <Footer>

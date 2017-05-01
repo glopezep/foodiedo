@@ -1,6 +1,7 @@
 .body {
   display: flex;
   flex: 1;
+  padding: 1em;
 }
 
 .bodyLeft {
@@ -52,5 +53,6 @@
   background-color: #fff;
   display: flex;
   height: 50px;
+  margin-bottom: 1em;
   padding: 0 1em;
 }
