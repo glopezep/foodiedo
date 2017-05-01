@@ -13887,7 +13887,7 @@ exports = module.exports = __webpack_require__(39)(undefined);
 
 
 // module
-exports.push([module.i, "._3Aq0QQhf7UYzQHMGFM9yEM {\n  display: flex;\n  flex-direction: column;\n  width: 360px;\n}\n\n._2nii3eXgZbuuE_qw5zQXnq {\n  align-items: center;\n  background: #fff;\n  display: flex;\n  height: 75px;\n  justify-content: space-between;\n  padding: 0 1em;\n}\n\n._3PxE231UJ0oAlfowEml0R_ {\n  background-color: silver;\n  flex: 1;\n}\n\n._2kDaHj-69CeywcfiwyVKRj {\n  display: flex;\n  flex-direction: column;\n}\n", ""]);
+exports.push([module.i, "._3Aq0QQhf7UYzQHMGFM9yEM {\n  display: flex;\n  flex-direction: column;\n  margin-right: 1em;\n  width: 360px;\n}\n\n._2nii3eXgZbuuE_qw5zQXnq {\n  align-items: center;\n  background: #fff;\n  display: flex;\n  height: 75px;\n  justify-content: space-between;\n  padding: 0 1em;\n}\n\n._3PxE231UJ0oAlfowEml0R_ {\n  background-color: silver;\n  flex: 1;\n}\n\n._2kDaHj-69CeywcfiwyVKRj {\n  display: flex;\n  flex-direction: column;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -13906,7 +13906,7 @@ exports = module.exports = __webpack_require__(39)(undefined);
 
 
 // module
-exports.push([module.i, "._196fofSl_NT7XC3Xth9rFV {\n  display: flex;\n  flex: 1;\n  padding: 1em;\n}\n\n._3GlEluQeo8Tk6EQf2V3OjL {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  margin-right: 1em;\n}\n\n.x33vwsm_wUqy0rURwyQjD {\n  width: 255px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD {\n  border: none;\n  background-color: #d95459;\n  color: #fff;\n  cursor: pointer;\n  font-size: .9em;\n  padding: 1em 0;\n  text-transform: uppercase;\n  width: 125px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD:hover {\n  background-color: #a64347;\n}\n\n._1OB4ZV6BHT2Wu-AkaLrDtH {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._1-XIDGjPQfqpr4t6-wcbVz {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._3xDBnaFrhDSnwdvUFh-Vw_ {\n  align-items: center;\n  background-color: #fff;\n  display: flex;\n  height: 50px;\n  margin-bottom: 1em;\n  padding: 0 1em;\n}\n", ""]);
+exports.push([module.i, "._196fofSl_NT7XC3Xth9rFV {\n  display: flex;\n  flex: 1;\n  padding: 1em;\n}\n\n._3GlEluQeo8Tk6EQf2V3OjL {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  margin-right: 1em;\n}\n\n.x33vwsm_wUqy0rURwyQjD {\n  width: 255px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD {\n  border: none;\n  background-color: #d95459;\n  color: #fff;\n  cursor: pointer;\n  font-size: .9em;\n  padding: 1em 0;\n  text-transform: uppercase;\n  width: 125px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD:hover {\n  background-color: #a64347;\n}\n\n._1OB4ZV6BHT2Wu-AkaLrDtH {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._1-XIDGjPQfqpr4t6-wcbVz {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._3xDBnaFrhDSnwdvUFh-Vw_ {\n  align-items: center;\n  background-color: #fff;\n  display: flex;\n  height: 50px;\n  justify-content: space-between;\n  margin-bottom: 1em;\n  padding: 0 1em;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -28587,7 +28587,7 @@ exports = module.exports = __webpack_require__(39)(undefined);
 
 
 // module
-exports.push([module.i, "._1O_1u4kGSYEPpZCFKxlW0k {\n  background-color: #636f80;\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  margin: .5em 0;\n  padding: .5em;\n  width: 45%;\n}\n\n._1O_1u4kGSYEPpZCFKxlW0k:nth-child(1), ._1O_1u4kGSYEPpZCFKxlW0k:nth-child(2) {\n  margin-top: 0;\n}\n\n._1O_1u4kGSYEPpZCFKxlW0k:nth-child(5), ._1O_1u4kGSYEPpZCFKxlW0k:nth-child(6) {\n  margin-bottom: 0;\n}\n", ""]);
+exports.push([module.i, "._1O_1u4kGSYEPpZCFKxlW0k {\n  background-color: #636f80;\n  color: #fff;\n  cursor: pointer;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  margin: .5em 0;\n  padding: .5em;\n  width: 44%;\n}\n\n._1O_1u4kGSYEPpZCFKxlW0k:nth-child(1), ._1O_1u4kGSYEPpZCFKxlW0k:nth-child(2) {\n  margin-top: 0;\n}\n\n._1O_1u4kGSYEPpZCFKxlW0k:nth-child(5), ._1O_1u4kGSYEPpZCFKxlW0k:nth-child(6) {\n  margin-bottom: 0;\n}\n", ""]);
 
 // exports
 exports.locals = {

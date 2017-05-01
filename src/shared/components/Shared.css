@@ -53,6 +53,7 @@
   background-color: #fff;
   display: flex;
   height: 50px;
+  justify-content: space-between;
   margin-bottom: 1em;
   padding: 0 1em;
 }
