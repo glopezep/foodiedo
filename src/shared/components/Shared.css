@@ -1,0 +1,30 @@
+.body {
+  display: flex;
+  flex: 1;
+}
+
+.bodyLeft {
+  background: white;
+  flex: 1;
+}
+
+.bodyRight {
+  background: white;
+  width: 255px;
+}
+
+.footer {
+  align-items: center;
+  background-color: #636f80;
+  color: white;
+  display: flex;
+  height: 50px;
+}
+
+.header {
+  align-items: center;
+  background-color: #636f80;
+  color: white;
+  display: flex;
+  height: 50px;
+}

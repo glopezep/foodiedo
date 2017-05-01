@@ -3,7 +3,7 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { renderHtml } from './lib/utils';
-import Pages from './pages/containers/Pages'
+import Pages from './pages/components/Pages'
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -25,7 +25,7 @@ app.use((req, res) => {
     res.write(renderHtml({
       title: 'Foodiedo',
       html: html,
-      css: ['http://localhost:5000/app.css'],
+      css: [],
       js: 'http://localhost:5000/app.js',
     }))
     res.end();
