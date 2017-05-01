@@ -22,7 +22,12 @@ app.use((req, res) => {
     res.end()
   }
   else {
-    res.write(renderHtml({ title: 'Test', html: html }))
+    res.write(renderHtml({
+      title: 'Foodiedo',
+      html: html,
+      css: [],
+      js: 'http://localhost:5000/app.js',
+    }))
     res.end();
   }
 });

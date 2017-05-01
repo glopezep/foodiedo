@@ -1,10 +1,10 @@
 const path = require('path');
 
-const server = {
-  entry: './src/server/index.js',
+const client = {
+  entry: './src/client.js',
   output: {
-    filename: 'server.js',
-    path: path.resolve(__dirname, '.'),
+    filename: 'app.js',
+    path: path.resolve(__dirname, 'built'),
   },
   module: {
     rules: [
@@ -14,5 +14,5 @@ const server = {
 }
 
 module.exports = [
-  server
+  client
 ];
