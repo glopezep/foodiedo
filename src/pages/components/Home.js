@@ -7,6 +7,7 @@ import Footer from '../../shared/components/Footer';
 import Body from '../../shared/components/Body';
 import BodyLeft from '../../shared/components/BodyLeft';
 import BodyRight from '../../shared/components/BodyRight';
+import ProductBox from '../../product/components/ProductBox';
 
 const Home = () => (
   <section className={styles.home}>
@@ -15,16 +16,14 @@ const Home = () => (
     </Header>
     <Body>
       <BodyLeft>
-        <HeaderBar>
-        </HeaderBar>
-        <div>
+        <HeaderBar />
+        <div className={styles.bodyLeftContainer}>
           <CurrentProduct />
-          
+          <ProductBox />
         </div>
       </BodyLeft>
       <BodyRight>
-        <HeaderBar>
-        </HeaderBar>
+        <HeaderBar />
       </BodyRight>
     </Body>
     <Footer>

@@ -6,9 +6,9 @@
   "author": "Guillermo Lopez",
   "license": "MIT",
   "scripts": {
-    "build": "yarn webpack -- --progress --colors",
-    "watch": "yarn webpack -- --progress --colors --watch",
-    "static": "yarn serve ./built -- --cache 0"
+    "build": "webpack --progress --colors",
+    "watch": "webpack --progress --colors --watch",
+    "static": "serve ./built --cache 0"
   },
   "dependencies": {
     "babel-register": "^6.24.1",
