@@ -11542,7 +11542,7 @@ var Home = function Home() {
         _react2.default.createElement(_HeaderBar2.default, null),
         _react2.default.createElement(
           'div',
-          { className: _Pages2.default.bodyLeftContainer },
+          { className: _Pages2.default.container },
           _react2.default.createElement(_CurrentProduct2.default, null),
           _react2.default.createElement(_ProductBox2.default, null)
         )
@@ -11614,12 +11614,16 @@ var _ProductPagination = __webpack_require__(105);
 
 var _ProductPagination2 = _interopRequireDefault(_ProductPagination);
 
+var _ProductBox = __webpack_require__(249);
+
+var _ProductBox2 = _interopRequireDefault(_ProductBox);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ProductBox = function ProductBox() {
   return _react2.default.createElement(
     'div',
-    null,
+    { className: _ProductBox2.default.container },
     _react2.default.createElement(_ProductList2.default, null),
     _react2.default.createElement(_ProductPagination2.default, null)
   );
@@ -13797,11 +13801,12 @@ exports = module.exports = __webpack_require__(39)(undefined);
 
 
 // module
-exports.push([module.i, "body,html,h1,h2,h3,h4,h5,h6,ul,li,p {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n._3JfX932_XD3qkWphNtTKQ9 {\n  background-color: #f0eff0;\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n}\n", ""]);
+exports.push([module.i, "body,html,h1,h2,h3,h4,h5,h6,ul,li,p {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n._3JfX932_XD3qkWphNtTKQ9 {\n  background-color: #f0eff0;\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n}\n\n.OkTzIbGUDJIrsuOytzC6N {\n  display: flex;\n  flex: 1;\n}\n", ""]);
 
 // exports
 exports.locals = {
-	"home": "_3JfX932_XD3qkWphNtTKQ9"
+	"home": "_3JfX932_XD3qkWphNtTKQ9",
+	"container": "OkTzIbGUDJIrsuOytzC6N"
 };
 
 /***/ }),
@@ -13813,7 +13818,7 @@ exports = module.exports = __webpack_require__(39)(undefined);
 
 
 // module
-exports.push([module.i, "._3Aq0QQhf7UYzQHMGFM9yEM {}\n._2nii3eXgZbuuE_qw5zQXnq {}\n._3PxE231UJ0oAlfowEml0R_ {}\n", ""]);
+exports.push([module.i, "._3Aq0QQhf7UYzQHMGFM9yEM {\n  display: flex;\n  flex-direction: column;\n  width: 360px;\n}\n\n._2nii3eXgZbuuE_qw5zQXnq {\n  background: #fff;\n  height: 75px;\n}\n\n._3PxE231UJ0oAlfowEml0R_ {\n  background-color: silver;\n  flex: 1;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -28388,6 +28393,48 @@ try {
 
 module.exports = g;
 
+
+/***/ }),
+/* 248 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(39)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "._25SihiKVRVf903JqZVYGVG {\n  flex: 1;\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"container": "_25SihiKVRVf903JqZVYGVG"
+};
+
+/***/ }),
+/* 249 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(248);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(62)(content, {"sourceMap":true});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules!./ProductBox.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js?modules!./ProductBox.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

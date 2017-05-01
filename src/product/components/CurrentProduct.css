@@ -1,3 +1,15 @@
-.container {}
-.footer {}
-.image {}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+}
+
+.footer {
+  background: #fff;
+  height: 75px;
+}
+
+.image {
+  background-color: silver;
+  flex: 1;
+}

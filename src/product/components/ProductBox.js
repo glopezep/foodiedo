@@ -1,9 +1,10 @@
 import React from 'react';
 import ProductList from './ProductList';
 import ProductPagination from './ProductPagination';
+import styles from './ProductBox.css'
 
 const ProductBox = () => (
-  <div>
+  <div className={styles.container}>
     <ProductList />
     <ProductPagination />
   </div>

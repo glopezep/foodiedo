@@ -17,7 +17,7 @@ const Home = () => (
     <Body>
       <BodyLeft>
         <HeaderBar />
-        <div className={styles.bodyLeftContainer}>
+        <div className={styles.container}>
           <CurrentProduct />
           <ProductBox />
         </div>
