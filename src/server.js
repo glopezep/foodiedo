@@ -25,7 +25,7 @@ app.use((req, res) => {
     res.write(renderHtml({
       title: 'Foodiedo',
       html: html,
-      css: [],
+      css: ['http://localhost:5000/app.css'],
       js: 'http://localhost:5000/app.js',
     }))
     res.end();
