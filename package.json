@@ -6,6 +6,8 @@
   "author": "Guillermo Lopez",
   "license": "MIT",
   "scripts": {
+    "build": "yarn webpack -- --progress --colors",
+    "watch": "yarn webpack -- --progress --colors --watch",
     "static": "yarn serve ./built -- --cache 0"
   },
   "dependencies": {
@@ -28,6 +30,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.0",
     "serve": "^5.1.4",
+    "style-loader": "^0.16.1",
     "webpack": "^2.4.1"
   }
 }

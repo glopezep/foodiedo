@@ -8,7 +8,18 @@ const client = {
   },
   module: {
     rules: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader' }
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        loaders: [
+          'style-loader?sourceMap',
+          'css-loader?modules'
+        ]
+      }
     ]
   }
 }
