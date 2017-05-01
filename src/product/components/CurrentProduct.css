@@ -5,11 +5,20 @@
 }
 
 .footer {
+  align-items: center;
   background: #fff;
+  display: flex;
   height: 75px;
+  justify-content: space-between;
+  padding: 0 1em;
 }
 
 .image {
   background-color: silver;
   flex: 1;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
 }

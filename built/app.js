@@ -11574,6 +11574,10 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Button = __webpack_require__(250);
+
+var _Button2 = _interopRequireDefault(_Button);
+
 var _CurrentProduct = __webpack_require__(245);
 
 var _CurrentProduct2 = _interopRequireDefault(_CurrentProduct);
@@ -11585,7 +11589,29 @@ var CurrentProduct = function CurrentProduct(props) {
     'article',
     { className: _CurrentProduct2.default.container },
     _react2.default.createElement('div', { className: _CurrentProduct2.default.image }),
-    _react2.default.createElement('footer', { className: _CurrentProduct2.default.footer })
+    _react2.default.createElement(
+      'footer',
+      { className: _CurrentProduct2.default.footer },
+      _react2.default.createElement(
+        'div',
+        { className: _CurrentProduct2.default.product },
+        _react2.default.createElement(
+          'span',
+          { className: _CurrentProduct2.default.name },
+          'Orange Juice'
+        ),
+        _react2.default.createElement(
+          'span',
+          { className: _CurrentProduct2.default.price },
+          'RD$120'
+        )
+      ),
+      _react2.default.createElement(
+        _Button2.default,
+        null,
+        'Add'
+      )
+    )
   );
 };
 
@@ -11646,10 +11672,27 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Product = __webpack_require__(251);
+
+var _Product2 = _interopRequireDefault(_Product);
+
+var _ProductList = __webpack_require__(255);
+
+var _ProductList2 = _interopRequireDefault(_ProductList);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var ProductList = function ProductList() {
-  return _react2.default.createElement('div', null);
+var ProductList = function ProductList(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: _ProductList2.default.container },
+    _react2.default.createElement(_Product2.default, null),
+    _react2.default.createElement(_Product2.default, null),
+    _react2.default.createElement(_Product2.default, null),
+    _react2.default.createElement(_Product2.default, null),
+    _react2.default.createElement(_Product2.default, null),
+    _react2.default.createElement(_Product2.default, null)
+  );
 };
 
 exports.default = ProductList;
@@ -11669,10 +11712,31 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Button = __webpack_require__(250);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _ProductPagination = __webpack_require__(257);
+
+var _ProductPagination2 = _interopRequireDefault(_ProductPagination);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var ProductPagination = function ProductPagination() {
-  return _react2.default.createElement('div', null);
+var ProductPagination = function ProductPagination(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: _ProductPagination2.default.container },
+    _react2.default.createElement(
+      _Button2.default,
+      null,
+      'Back'
+    ),
+    _react2.default.createElement(
+      _Button2.default,
+      null,
+      'Next'
+    )
+  );
 };
 
 exports.default = ProductPagination;
@@ -13801,7 +13865,7 @@ exports = module.exports = __webpack_require__(39)(undefined);
 
 
 // module
-exports.push([module.i, "body,html,h1,h2,h3,h4,h5,h6,ul,li,p {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n._3JfX932_XD3qkWphNtTKQ9 {\n  background-color: #f0eff0;\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n}\n\n.OkTzIbGUDJIrsuOytzC6N {\n  display: flex;\n  flex: 1;\n}\n", ""]);
+exports.push([module.i, "body,html,h1,h2,h3,h4,h5,h6,ul,li,p {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-size: 16px;\n}\n\n._3JfX932_XD3qkWphNtTKQ9 {\n  background-color: #f0eff0;\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n}\n\n.OkTzIbGUDJIrsuOytzC6N {\n  display: flex;\n  flex: 1;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -13818,13 +13882,14 @@ exports = module.exports = __webpack_require__(39)(undefined);
 
 
 // module
-exports.push([module.i, "._3Aq0QQhf7UYzQHMGFM9yEM {\n  display: flex;\n  flex-direction: column;\n  width: 360px;\n}\n\n._2nii3eXgZbuuE_qw5zQXnq {\n  background: #fff;\n  height: 75px;\n}\n\n._3PxE231UJ0oAlfowEml0R_ {\n  background-color: silver;\n  flex: 1;\n}\n", ""]);
+exports.push([module.i, "._3Aq0QQhf7UYzQHMGFM9yEM {\n  display: flex;\n  flex-direction: column;\n  width: 360px;\n}\n\n._2nii3eXgZbuuE_qw5zQXnq {\n  align-items: center;\n  background: #fff;\n  display: flex;\n  height: 75px;\n  justify-content: space-between;\n  padding: 0 1em;\n}\n\n._3PxE231UJ0oAlfowEml0R_ {\n  background-color: silver;\n  flex: 1;\n}\n\n._2kDaHj-69CeywcfiwyVKRj {\n  display: flex;\n  flex-direction: column;\n}\n", ""]);
 
 // exports
 exports.locals = {
 	"container": "_3Aq0QQhf7UYzQHMGFM9yEM",
 	"footer": "_2nii3eXgZbuuE_qw5zQXnq",
-	"image": "_3PxE231UJ0oAlfowEml0R_"
+	"image": "_3PxE231UJ0oAlfowEml0R_",
+	"product": "_2kDaHj-69CeywcfiwyVKRj"
 };
 
 /***/ }),
@@ -13836,13 +13901,14 @@ exports = module.exports = __webpack_require__(39)(undefined);
 
 
 // module
-exports.push([module.i, "._196fofSl_NT7XC3Xth9rFV {\n  display: flex;\n  flex: 1;\n}\n\n._3GlEluQeo8Tk6EQf2V3OjL {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  margin-right: 1em;\n}\n\n.x33vwsm_wUqy0rURwyQjD {\n  width: 255px;\n}\n\n._1OB4ZV6BHT2Wu-AkaLrDtH {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._1-XIDGjPQfqpr4t6-wcbVz {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._3xDBnaFrhDSnwdvUFh-Vw_ {\n  align-items: center;\n  background-color: #fff;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n", ""]);
+exports.push([module.i, "._196fofSl_NT7XC3Xth9rFV {\n  display: flex;\n  flex: 1;\n}\n\n._3GlEluQeo8Tk6EQf2V3OjL {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  margin-right: 1em;\n}\n\n.x33vwsm_wUqy0rURwyQjD {\n  width: 255px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD {\n  border: none;\n  background-color: #d95459;\n  color: #fff;\n  cursor: pointer;\n  font-size: .9em;\n  padding: 1em 0;\n  text-transform: uppercase;\n  width: 125px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD:hover {\n  background-color: #a64347;\n}\n\n._1OB4ZV6BHT2Wu-AkaLrDtH {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._1-XIDGjPQfqpr4t6-wcbVz {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._3xDBnaFrhDSnwdvUFh-Vw_ {\n  align-items: center;\n  background-color: #fff;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n", ""]);
 
 // exports
 exports.locals = {
 	"body": "_196fofSl_NT7XC3Xth9rFV",
 	"bodyLeft": "_3GlEluQeo8Tk6EQf2V3OjL",
 	"bodyRight": "x33vwsm_wUqy0rURwyQjD",
+	"button": "_3SXpLuOozFU8o-Kr_6FNwD",
 	"footer": "_1OB4ZV6BHT2Wu-AkaLrDtH",
 	"header": "_1-XIDGjPQfqpr4t6-wcbVz",
 	"headerBar": "_3xDBnaFrhDSnwdvUFh-Vw_"
@@ -28403,7 +28469,7 @@ exports = module.exports = __webpack_require__(39)(undefined);
 
 
 // module
-exports.push([module.i, "._25SihiKVRVf903JqZVYGVG {\n  flex: 1;\n}\n", ""]);
+exports.push([module.i, "._25SihiKVRVf903JqZVYGVG {\n  display: flex;\n  flex: 1;\n  flex-direction: column;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -28428,6 +28494,203 @@ if(false) {
 	if(!content.locals) {
 		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules!./ProductBox.css", function() {
 			var newContent = require("!!../../../node_modules/css-loader/index.js?modules!./ProductBox.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 250 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Shared = __webpack_require__(24);
+
+var _Shared2 = _interopRequireDefault(_Shared);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Button = function Button(props) {
+  return _react2.default.createElement(
+    'button',
+    { className: _Shared2.default.button, onClick: props.onClick },
+    props.children
+  );
+};
+
+exports.default = Button;
+
+/***/ }),
+/* 251 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Product = __webpack_require__(253);
+
+var _Product2 = _interopRequireDefault(_Product);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Product = function Product(props) {
+  return _react2.default.createElement(
+    'article',
+    { className: _Product2.default.container },
+    _react2.default.createElement(
+      'span',
+      null,
+      'Orange Juice'
+    ),
+    _react2.default.createElement(
+      'span',
+      null,
+      'RD$120'
+    )
+  );
+};
+
+exports.default = Product;
+
+/***/ }),
+/* 252 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(39)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "._1O_1u4kGSYEPpZCFKxlW0k {\n  background-color: #636f80;\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  margin: .25em 0;\n  padding: .5em;\n  width: 45%;\n}\n\n._1O_1u4kGSYEPpZCFKxlW0k:nth-child(1), ._1O_1u4kGSYEPpZCFKxlW0k:nth-child(2) {\n  margin-top: 0;\n}\n\n._1O_1u4kGSYEPpZCFKxlW0k:nth-child(5), ._1O_1u4kGSYEPpZCFKxlW0k:nth-child(6) {\n  margin-bottom: 0;\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"container": "_1O_1u4kGSYEPpZCFKxlW0k"
+};
+
+/***/ }),
+/* 253 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(252);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(62)(content, {"sourceMap":true});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules!./Product.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js?modules!./Product.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 254 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(39)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "._3-rPmY6qJ1Rhj1f0EhGFJS {\n  display: flex;\n  flex: 1;\n  flex-wrap: wrap;\n  justify-content: space-between;\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"container": "_3-rPmY6qJ1Rhj1f0EhGFJS"
+};
+
+/***/ }),
+/* 255 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(254);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(62)(content, {"sourceMap":true});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules!./ProductList.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js?modules!./ProductList.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 256 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(39)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".UX2_x-WqhwjCwV5udKbVK {\n  align-items: center;\n  display: flex;\n  height: 75px;\n  justify-content: space-between;\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"container": "UX2_x-WqhwjCwV5udKbVK"
+};
+
+/***/ }),
+/* 257 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(256);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(62)(content, {"sourceMap":true});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules!./ProductPagination.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js?modules!./ProductPagination.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
