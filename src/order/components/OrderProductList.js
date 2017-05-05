@@ -1,12 +1,15 @@
 import React from 'react';
 import OrderProduct from './OrderProduct';
 
-const OrderProductList = (props) => (
+const OrderProductList = ({ products, removeProductOrder }) => (
   <div>
-    <OrderProduct />
-    <OrderProduct />
-    <OrderProduct />
-    <OrderProduct />
+    {products.map(product => {
+      return <OrderProduct
+        key={product.get('id')}
+        product={product}
+        removeProductOrder={removeProductOrder}
+      />
+    })}
   </div>
 );
 

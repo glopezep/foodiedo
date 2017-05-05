@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './OrderProduct.css';
 
-const OrderProduct = (props) => (
+const OrderProduct = ({ product, removeProductOrder }) => (
   <article className={styles.container}>
-    <span>Orange Juice</span>
-    <span>RD$120</span>
-    <span>X</span>
+    <span>{product.get('name')}</span>
+    <span>RD${product.get('price')}</span>
+    <span onClick={() => removeProductOrder(product)}>X</span>
   </article>
 );
 

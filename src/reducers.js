@@ -10,7 +10,7 @@ import {
   REQUEST_ORDER,
 } from './actions';
 
-function currentProduct(state, action) {
+function currentProduct(state = map(), action) {
   switch (action.type) {
     case SET_CURRENT_PRODUCT:
       return map(action.payload)
@@ -19,7 +19,7 @@ function currentProduct(state, action) {
   }
 }
 
-function productList(state, action) {
+function productList(state = map(), action) {
   switch (action.type) {
     case GET_PREVIOUS_PRODUCTS:
       const end = state.get('page') * 6;
@@ -49,7 +49,7 @@ function productList(state, action) {
   }
 }
 
-function order(state, action) {
+function order(state = map(), action) {
   switch (action.type) {
     case ADD_PRODUCT_TO_ORDER:
       return map({
@@ -63,7 +63,7 @@ function order(state, action) {
         requested: false,
         paid: false,
         entities: state.get('entities').filter(product => {
-          return product.id !== action.payload.get('id')
+          return product.get('id') !== action.payload.get('id')
         }),
         totalPrice: state.get('totalPrice') - action.payload.get('totalPrice')
 

@@ -2,7 +2,7 @@ export const ADD_PRODUCT_TO_ORDER = 'ADD_PRODUCT_TO_ORDER';
 export function addProductToOrder(product) {
   return {
     type: ADD_PRODUCT_TO_ORDER,
-    padyload: product,
+    payload: product,
   }
 }
 
@@ -10,7 +10,7 @@ export const REMOVE_PRODUCT_OF_ORDER = 'REMOVE_PRODUCT_OF_ORDER';
 export function removeProductOrder(product) {
   return {
     type: REMOVE_PRODUCT_OF_ORDER,
-    padyload: product,
+    payload: product,
   }
 }
 
