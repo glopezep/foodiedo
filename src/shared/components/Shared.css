@@ -53,6 +53,10 @@
   padding: 0 1em;
 }
 
+.title {
+  font-weight: normal;
+}
+
 .whiteHeader {
   align-items: center;
   background-color: #fff;

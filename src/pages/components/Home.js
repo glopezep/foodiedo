@@ -10,6 +10,7 @@ import BodyRight from '../../shared/components/BodyRight';
 import OrderBox from '../../order/components/OrderBox';
 import ProductBox from '../../product/components/ProductBox';
 import Title from '../../shared/components/Title';
+import FilterForm from '../../shared/containers/FilterForm';
 
 const Home = () => (
   <section className={styles.home}>
@@ -20,6 +21,7 @@ const Home = () => (
       <BodyLeft>
         <WhiteHeader>
           <Title>Product List</Title>
+          <FilterForm />
         </WhiteHeader>
         <div className={styles.container}>
           <CurrentProduct />

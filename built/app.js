@@ -18239,6 +18239,10 @@ var _Title = __webpack_require__(321);
 
 var _Title2 = _interopRequireDefault(_Title);
 
+var _FilterForm = __webpack_require__(322);
+
+var _FilterForm2 = _interopRequireDefault(_FilterForm);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Home = function Home() {
@@ -18267,7 +18271,8 @@ var Home = function Home() {
             _Title2.default,
             null,
             'Product List'
-          )
+          ),
+          _react2.default.createElement(_FilterForm2.default, null)
         ),
         _react2.default.createElement(
           'div',
@@ -20747,7 +20752,7 @@ exports = module.exports = __webpack_require__(16)(undefined);
 
 
 // module
-exports.push([module.i, "body,html,h1,h2,h3,h4,h5,h6,ul,li,p {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-size: 16px;\n}\n\n._3JfX932_XD3qkWphNtTKQ9 {\n  background-color: #f0eff0;\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n}\n\n.OkTzIbGUDJIrsuOytzC6N {\n  display: flex;\n  flex: 1;\n}\n", ""]);
+exports.push([module.i, "body,html,h1,h2,h3,h4,h5,h6,ul,li,p {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  color: #636f80;\n  font-size: 16px;\n  font-family: sans-serif;\n}\n\n._3JfX932_XD3qkWphNtTKQ9 {\n  background-color: #f0eff0;\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n}\n\n.OkTzIbGUDJIrsuOytzC6N {\n  display: flex;\n  flex: 1;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -20847,7 +20852,7 @@ exports = module.exports = __webpack_require__(16)(undefined);
 
 
 // module
-exports.push([module.i, "._2f2TmXHJ-qEjcB3Pr_7fJ6 {\n  background-color: silver;\n  flex: 1;\n}\n\n._196fofSl_NT7XC3Xth9rFV {\n  display: flex;\n  flex: 1;\n  padding: 1em;\n}\n\n._3GlEluQeo8Tk6EQf2V3OjL {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  margin-right: 1em;\n}\n\n.x33vwsm_wUqy0rURwyQjD {\n  width: 255px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD {\n  border: none;\n  background-color: #d95459;\n  color: #fff;\n  cursor: pointer;\n  font-size: .9em;\n  padding: 1em 0;\n  text-transform: uppercase;\n  width: 125px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD:hover {\n  background-color: #a64347;\n}\n\n._1OB4ZV6BHT2Wu-AkaLrDtH {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._1-XIDGjPQfqpr4t6-wcbVz {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._3H32-AZGXjgaY5hXoA04f {\n  align-items: center;\n  background-color: #fff;\n  display: flex;\n  height: 50px;\n  justify-content: space-between;\n  margin-bottom: 1em;\n  padding: 0 1em;\n}\n", ""]);
+exports.push([module.i, "._2f2TmXHJ-qEjcB3Pr_7fJ6 {\n  background-color: silver;\n  flex: 1;\n}\n\n._196fofSl_NT7XC3Xth9rFV {\n  display: flex;\n  flex: 1;\n  padding: 1em;\n}\n\n._3GlEluQeo8Tk6EQf2V3OjL {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  margin-right: 1em;\n}\n\n.x33vwsm_wUqy0rURwyQjD {\n  width: 255px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD {\n  border: none;\n  background-color: #d95459;\n  color: #fff;\n  cursor: pointer;\n  font-size: .9em;\n  padding: 1em 0;\n  text-transform: uppercase;\n  width: 125px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD:hover {\n  background-color: #a64347;\n}\n\n._1OB4ZV6BHT2Wu-AkaLrDtH {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._1-XIDGjPQfqpr4t6-wcbVz {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._149TLbRsE04zn8gdrb4A-l {\n  font-weight: normal;\n}\n\n._3H32-AZGXjgaY5hXoA04f {\n  align-items: center;\n  background-color: #fff;\n  display: flex;\n  height: 50px;\n  justify-content: space-between;\n  margin-bottom: 1em;\n  padding: 0 1em;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -20858,6 +20863,7 @@ exports.locals = {
 	"button": "_3SXpLuOozFU8o-Kr_6FNwD",
 	"footer": "_1OB4ZV6BHT2Wu-AkaLrDtH",
 	"header": "_1-XIDGjPQfqpr4t6-wcbVz",
+	"title": "_149TLbRsE04zn8gdrb4A-l",
 	"whiteHeader": "_3H32-AZGXjgaY5hXoA04f"
 };
 
@@ -37797,6 +37803,116 @@ var Title = function Title(props) {
 };
 
 exports.default = Title;
+
+/***/ }),
+/* 322 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _FilterForm = __webpack_require__(324);
+
+var _FilterForm2 = _interopRequireDefault(_FilterForm);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var FilterForm = function (_Component) {
+  _inherits(FilterForm, _Component);
+
+  function FilterForm(props) {
+    _classCallCheck(this, FilterForm);
+
+    return _possibleConstructorReturn(this, (FilterForm.__proto__ || Object.getPrototypeOf(FilterForm)).call(this, props));
+  }
+
+  _createClass(FilterForm, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'form',
+        null,
+        _react2.default.createElement('input', {
+          className: _FilterForm2.default.input,
+          type: 'text',
+          placeholder: 'Search here...'
+        }),
+        _react2.default.createElement(
+          'select',
+          { className: _FilterForm2.default.select },
+          _react2.default.createElement(
+            'option',
+            { value: '0' },
+            'Filter'
+          )
+        )
+      );
+    }
+  }]);
+
+  return FilterForm;
+}(_react.Component);
+
+exports.default = FilterForm;
+
+/***/ }),
+/* 323 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(16)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "._22ZvBrIMsUUt0q32nNLlHL {\n  font-size: .8em;\n  height: 25px;\n  margin-right: 1em;\n  width: 125px;\n}\n\n._1okMVvKJQjxmGzfd6wE3R9 {\n  background-color: #d95459;\n  border: none;\n  color: #fff;\n  font-size: .8em;\n  height: 30px;\n  text-transform: uppercase;\n  width: 125px;\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"input": "_22ZvBrIMsUUt0q32nNLlHL",
+	"select": "_1okMVvKJQjxmGzfd6wE3R9"
+};
+
+/***/ }),
+/* 324 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(323);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(18)(content, {"sourceMap":true});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules!./FilterForm.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js?modules!./FilterForm.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

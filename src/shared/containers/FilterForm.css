@@ -1,0 +1,16 @@
+.input {
+  font-size: .8em;
+  height: 25px;
+  margin-right: 1em;
+  width: 125px;
+}
+
+.select {
+  background-color: #d95459;
+  border: none;
+  color: #fff;
+  font-size: .8em;
+  height: 30px;
+  text-transform: uppercase;
+  width: 125px;
+}
