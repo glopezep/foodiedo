@@ -18227,13 +18227,17 @@ var _BodyRight = __webpack_require__(134);
 
 var _BodyRight2 = _interopRequireDefault(_BodyRight);
 
+var _OrderBox = __webpack_require__(123);
+
+var _OrderBox2 = _interopRequireDefault(_OrderBox);
+
 var _ProductBox = __webpack_require__(129);
 
 var _ProductBox2 = _interopRequireDefault(_ProductBox);
 
-var _OrderBox = __webpack_require__(123);
+var _Title = __webpack_require__(321);
 
-var _OrderBox2 = _interopRequireDefault(_OrderBox);
+var _Title2 = _interopRequireDefault(_Title);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -18256,7 +18260,15 @@ var Home = function Home() {
       _react2.default.createElement(
         _BodyLeft2.default,
         null,
-        _react2.default.createElement(_WhiteHeader2.default, null),
+        _react2.default.createElement(
+          _WhiteHeader2.default,
+          null,
+          _react2.default.createElement(
+            _Title2.default,
+            null,
+            'Product List'
+          )
+        ),
         _react2.default.createElement(
           'div',
           { className: _Pages2.default.container },
@@ -18267,7 +18279,15 @@ var Home = function Home() {
       _react2.default.createElement(
         _BodyRight2.default,
         null,
-        _react2.default.createElement(_WhiteHeader2.default, null),
+        _react2.default.createElement(
+          _WhiteHeader2.default,
+          null,
+          _react2.default.createElement(
+            _Title2.default,
+            null,
+            'Order'
+          )
+        ),
         _react2.default.createElement(_OrderBox2.default, null)
       )
     ),
@@ -20827,10 +20847,11 @@ exports = module.exports = __webpack_require__(16)(undefined);
 
 
 // module
-exports.push([module.i, "._196fofSl_NT7XC3Xth9rFV {\n  display: flex;\n  flex: 1;\n  padding: 1em;\n}\n\n._3GlEluQeo8Tk6EQf2V3OjL {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  margin-right: 1em;\n}\n\n.x33vwsm_wUqy0rURwyQjD {\n  width: 255px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD {\n  border: none;\n  background-color: #d95459;\n  color: #fff;\n  cursor: pointer;\n  font-size: .9em;\n  padding: 1em 0;\n  text-transform: uppercase;\n  width: 125px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD:hover {\n  background-color: #a64347;\n}\n\n._1OB4ZV6BHT2Wu-AkaLrDtH {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._1-XIDGjPQfqpr4t6-wcbVz {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._3H32-AZGXjgaY5hXoA04f {\n  align-items: center;\n  background-color: #fff;\n  display: flex;\n  height: 50px;\n  justify-content: space-between;\n  margin-bottom: 1em;\n  padding: 0 1em;\n}\n", ""]);
+exports.push([module.i, "._2f2TmXHJ-qEjcB3Pr_7fJ6 {\n  background-color: silver;\n  flex: 1;\n}\n\n._196fofSl_NT7XC3Xth9rFV {\n  display: flex;\n  flex: 1;\n  padding: 1em;\n}\n\n._3GlEluQeo8Tk6EQf2V3OjL {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  margin-right: 1em;\n}\n\n.x33vwsm_wUqy0rURwyQjD {\n  width: 255px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD {\n  border: none;\n  background-color: #d95459;\n  color: #fff;\n  cursor: pointer;\n  font-size: .9em;\n  padding: 1em 0;\n  text-transform: uppercase;\n  width: 125px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD:hover {\n  background-color: #a64347;\n}\n\n._1OB4ZV6BHT2Wu-AkaLrDtH {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._1-XIDGjPQfqpr4t6-wcbVz {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._3H32-AZGXjgaY5hXoA04f {\n  align-items: center;\n  background-color: #fff;\n  display: flex;\n  height: 50px;\n  justify-content: space-between;\n  margin-bottom: 1em;\n  padding: 0 1em;\n}\n", ""]);
 
 // exports
 exports.locals = {
+	"advertising": "_2f2TmXHJ-qEjcB3Pr_7fJ6",
 	"body": "_196fofSl_NT7XC3Xth9rFV",
 	"bodyLeft": "_3GlEluQeo8Tk6EQf2V3OjL",
 	"bodyRight": "x33vwsm_wUqy0rURwyQjD",
@@ -37626,21 +37647,9 @@ var _Pages = __webpack_require__(304);
 
 var _Pages2 = _interopRequireDefault(_Pages);
 
-var _CurrentProduct = __webpack_require__(127);
+var _Advertising = __webpack_require__(320);
 
-var _CurrentProduct2 = _interopRequireDefault(_CurrentProduct);
-
-var _Header = __webpack_require__(136);
-
-var _Header2 = _interopRequireDefault(_Header);
-
-var _WhiteHeader = __webpack_require__(318);
-
-var _WhiteHeader2 = _interopRequireDefault(_WhiteHeader);
-
-var _Footer = __webpack_require__(135);
-
-var _Footer2 = _interopRequireDefault(_Footer);
+var _Advertising2 = _interopRequireDefault(_Advertising);
 
 var _Body = __webpack_require__(132);
 
@@ -37654,13 +37663,25 @@ var _BodyRight = __webpack_require__(134);
 
 var _BodyRight2 = _interopRequireDefault(_BodyRight);
 
-var _ProductBox = __webpack_require__(129);
+var _Footer = __webpack_require__(135);
 
-var _ProductBox2 = _interopRequireDefault(_ProductBox);
+var _Footer2 = _interopRequireDefault(_Footer);
+
+var _Header = __webpack_require__(136);
+
+var _Header2 = _interopRequireDefault(_Header);
 
 var _OrderBox = __webpack_require__(123);
 
 var _OrderBox2 = _interopRequireDefault(_OrderBox);
+
+var _WhiteHeader = __webpack_require__(318);
+
+var _WhiteHeader2 = _interopRequireDefault(_WhiteHeader);
+
+var _Title = __webpack_require__(321);
+
+var _Title2 = _interopRequireDefault(_Title);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37683,13 +37704,33 @@ var Waiting = function Waiting() {
       _react2.default.createElement(
         _BodyLeft2.default,
         null,
-        _react2.default.createElement(_WhiteHeader2.default, null),
-        _react2.default.createElement('div', { className: _Pages2.default.container })
+        _react2.default.createElement(
+          _WhiteHeader2.default,
+          null,
+          _react2.default.createElement(
+            _Title2.default,
+            null,
+            'Order'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: _Pages2.default.container },
+          _react2.default.createElement(_Advertising2.default, null)
+        )
       ),
       _react2.default.createElement(
         _BodyRight2.default,
         null,
-        _react2.default.createElement(_WhiteHeader2.default, null),
+        _react2.default.createElement(
+          _WhiteHeader2.default,
+          null,
+          _react2.default.createElement(
+            _Title2.default,
+            null,
+            'Order'
+          )
+        ),
         _react2.default.createElement(_OrderBox2.default, null)
       )
     ),
@@ -37698,6 +37739,64 @@ var Waiting = function Waiting() {
 };
 
 exports.default = Waiting;
+
+/***/ }),
+/* 320 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Shared = __webpack_require__(22);
+
+var _Shared2 = _interopRequireDefault(_Shared);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Advertising = function Advertising(props) {
+  return _react2.default.createElement('article', { className: _Shared2.default.advertising });
+};
+
+exports.default = Advertising;
+
+/***/ }),
+/* 321 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Shared = __webpack_require__(22);
+
+var _Shared2 = _interopRequireDefault(_Shared);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Title = function Title(props) {
+  return _react2.default.createElement(
+    'h2',
+    { className: _Shared2.default.title },
+    props.children
+  );
+};
+
+exports.default = Title;
 
 /***/ })
 /******/ ]);

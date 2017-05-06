@@ -7,8 +7,9 @@ import Footer from '../../shared/components/Footer';
 import Body from '../../shared/components/Body';
 import BodyLeft from '../../shared/components/BodyLeft';
 import BodyRight from '../../shared/components/BodyRight';
-import ProductBox from '../../product/components/ProductBox';
 import OrderBox from '../../order/components/OrderBox';
+import ProductBox from '../../product/components/ProductBox';
+import Title from '../../shared/components/Title';
 
 const Home = () => (
   <section className={styles.home}>
@@ -17,14 +18,18 @@ const Home = () => (
     </Header>
     <Body>
       <BodyLeft>
-        <WhiteHeader />
+        <WhiteHeader>
+          <Title>Product List</Title>
+        </WhiteHeader>
         <div className={styles.container}>
           <CurrentProduct />
           <ProductBox />
         </div>
       </BodyLeft>
       <BodyRight>
-        <WhiteHeader />
+        <WhiteHeader>
+          <Title>Order</Title>
+        </WhiteHeader>
         <OrderBox />
       </BodyRight>
     </Body>
