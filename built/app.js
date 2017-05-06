@@ -10384,7 +10384,7 @@ exports.addProductToOrder = addProductToOrder;
 exports.removeProductOrder = removeProductOrder;
 exports.requestOrder = requestOrder;
 exports.setCurrentProduct = setCurrentProduct;
-exports.getPreviousProduct = getPreviousProduct;
+exports.getPreviousProducts = getPreviousProducts;
 exports.getNextProducts = getNextProducts;
 exports.receiveNextProducts = receiveNextProducts;
 exports.receiveNextProductsFailure = receiveNextProductsFailure;
@@ -10424,7 +10424,7 @@ function setCurrentProduct(product) {
 }
 
 var GET_PREVIOUS_PRODUCTS = exports.GET_PREVIOUS_PRODUCTS = 'GET_PREVIOUS_PRODUCTS';
-function getPreviousProduct() {
+function getPreviousProducts() {
   return {
     type: GET_PREVIOUS_PRODUCTS
   };
@@ -10498,6 +10498,28 @@ function fetchProducts() {
 
     return function (_x) {
       return _ref.apply(this, arguments);
+    };
+  }();
+}
+
+function shouldFetchProducts() {
+  var _this2 = this;
+
+  return function () {
+    var _ref2 = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(dispatch, getState) {
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+            case 'end':
+              return _context2.stop();
+          }
+        }
+      }, _callee2, _this2);
+    }));
+
+    return function (_x2, _x3) {
+      return _ref2.apply(this, arguments);
     };
   }();
 }
@@ -17646,18 +17668,22 @@ function productList() {
 
   switch (action.type) {
     case _actions.GET_PREVIOUS_PRODUCTS:
+      if (state.get('page') === 1) return state;
+
       var end = state.get('page') * 6;
       var start = end - 6 - 1;
+
       return (0, _immutable.Map)({
         isFetching: false,
         page: state.get('page') - 1,
         visibleProducts: state.get('entities').slice(start, end),
         entities: state.get('entities')
       });
+
     case _actions.GET_NEXT_PRODUCTS:
       return (0, _immutable.Map)({
         isFetching: true,
-        page: state.get('page'),
+        page: state.get('page') + 1,
         visibleProducts: state.get('visibleProducts'),
         entities: state.get('entities')
       });
@@ -18520,20 +18546,29 @@ var ProductBox = function (_Component) {
     var _this = _possibleConstructorReturn(this, (ProductBox.__proto__ || Object.getPrototypeOf(ProductBox)).call(this, props));
 
     _this.setCurrentProduct = _this.props.actions.setCurrentProduct.bind(_this);
+    _this.getPreviousProducts = _this.props.actions.getPreviousProducts.bind(_this);
+    _this.getNextProducts = _this.props.actions.getNextProducts.bind(_this);
     return _this;
   }
 
   _createClass(ProductBox, [{
     key: 'render',
     value: function render() {
+      var productList = this.props.productList;
+
+
       return _react2.default.createElement(
         'div',
         { className: _ProductBox2.default.container },
         _react2.default.createElement(_ProductList2.default, {
-          products: this.props.productList.get('visibleProducts'),
+          products: productList.get('visibleProducts'),
           setCurrentProduct: this.setCurrentProduct
         }),
-        _react2.default.createElement(_ProductPagination2.default, null)
+        _react2.default.createElement(_ProductPagination2.default, {
+          page: productList.get('page'),
+          getPreviousProducts: this.getPreviousProducts,
+          getNextProducts: this.getNextProducts
+        })
       );
     }
   }]);
@@ -18623,18 +18658,26 @@ var _ProductPagination2 = _interopRequireDefault(_ProductPagination);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var ProductPagination = function ProductPagination(props) {
+var ProductPagination = function ProductPagination(_ref) {
+  var page = _ref.page,
+      getPreviousProducts = _ref.getPreviousProducts,
+      getNextProducts = _ref.getNextProducts;
   return _react2.default.createElement(
     'div',
     { className: _ProductPagination2.default.container },
     _react2.default.createElement(
       _Button2.default,
-      null,
+      { onClick: getPreviousProducts },
       'Back'
     ),
     _react2.default.createElement(
-      _Button2.default,
+      'span',
       null,
+      page
+    ),
+    _react2.default.createElement(
+      _Button2.default,
+      { onClick: getNextProducts },
       'Next'
     )
   );

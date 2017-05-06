@@ -2,10 +2,11 @@ import React from 'react';
 import Button from '../../shared/components/Button';
 import styles from './ProductPagination.css'
 
-const ProductPagination = (props) => (
+const ProductPagination = ({ page, getPreviousProducts, getNextProducts }) => (
   <div className={styles.container}>
-    <Button>Back</Button>
-    <Button>Next</Button>
+    <Button onClick={getPreviousProducts}>Back</Button>
+    <span>{page}</span>
+    <Button onClick={getNextProducts}>Next</Button>
   </div>
 );
 

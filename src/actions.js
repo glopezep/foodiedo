@@ -30,7 +30,7 @@ export function setCurrentProduct(product) {
 }
 
 export const GET_PREVIOUS_PRODUCTS = 'GET_PREVIOUS_PRODUCTS';
-export function getPreviousProduct() {
+export function getPreviousProducts() {
   return {
     type: GET_PREVIOUS_PRODUCTS,
   }
@@ -70,5 +70,10 @@ export function fetchProducts() {
     } catch (e) {
       dispatch(receiveNextProductsFailure(e));
     }
+  }
+}
+
+function shouldFetchProducts() {
+  return async (dispatch, getState) => {
   }
 }

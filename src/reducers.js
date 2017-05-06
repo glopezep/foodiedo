@@ -22,18 +22,22 @@ function currentProduct(state = map(), action) {
 function productList(state = map(), action) {
   switch (action.type) {
     case GET_PREVIOUS_PRODUCTS:
+      if (state.get('page') === 1) return state
+
       const end = state.get('page') * 6;
       const start = (end - 6) - 1;
+
       return map({
         isFetching: false,
         page: state.get('page') - 1,
         visibleProducts: state.get('entities').slice(start, end),
         entities: state.get('entities')
       })
+
     case GET_NEXT_PRODUCTS:
       return map({
         isFetching: true,
-        page: state.get('page'),
+        page: state.get('page') + 1,
         visibleProducts: state.get('visibleProducts'),
         entities: state.get('entities')
       })

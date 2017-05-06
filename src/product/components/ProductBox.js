@@ -10,15 +10,24 @@ class ProductBox extends Component {
   constructor(props){
     super(props)
     this.setCurrentProduct = this.props.actions.setCurrentProduct.bind(this);
+    this.getPreviousProducts = this.props.actions.getPreviousProducts.bind(this)
+    this.getNextProducts = this.props.actions.getNextProducts.bind(this)
   }
+
   render() {
+    const { productList } = this.props;
+
     return (
       <div className={styles.container}>
         <ProductList
-          products={this.props.productList.get('visibleProducts')}
+          products={productList.get('visibleProducts')}
           setCurrentProduct={this.setCurrentProduct}
         />
-        <ProductPagination />
+        <ProductPagination
+          page={productList.get('page')}
+          getPreviousProducts={this.getPreviousProducts}
+          getNextProducts={this.getNextProducts}
+        />
       </div>
     )
   }
