@@ -18034,26 +18034,36 @@ var OrderBox = function (_Component) {
     var _this = _possibleConstructorReturn(this, (OrderBox.__proto__ || Object.getPrototypeOf(OrderBox)).call(this, props));
 
     _this.removeProductOrder = _this.props.actions.removeProductOrder.bind(_this);
+    _this.requestOrder = _this.props.actions.requestOrder.bind(_this);
     return _this;
   }
 
   _createClass(OrderBox, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(_OrderProductList2.default, {
           products: this.props.order.get('entities'),
+          requested: this.props.order.get('requested'),
           removeProductOrder: this.removeProductOrder
         }),
         _react2.default.createElement(_TotalPrice2.default, { totalPrice: this.props.order.get('totalPrice') }),
         _react2.default.createElement(
           _reactRouterDom.Link,
           { to: '/waiting' },
-          _react2.default.createElement(
+          this.props.order.get('requested') ? _react2.default.createElement(
             _Button2.default,
             null,
+            'Pay'
+          ) : _react2.default.createElement(
+            _Button2.default,
+            { onClick: function onClick() {
+                return _this2.requestOrder();
+              } },
             'Order'
           )
         )
@@ -18101,6 +18111,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var OrderProduct = function OrderProduct(_ref) {
   var product = _ref.product,
+      requested = _ref.requested,
       removeProductOrder = _ref.removeProductOrder;
   return _react2.default.createElement(
     'article',
@@ -18116,7 +18127,7 @@ var OrderProduct = function OrderProduct(_ref) {
       'RD$',
       product.get('price')
     ),
-    _react2.default.createElement(
+    requested ? null : _react2.default.createElement(
       'span',
       { onClick: function onClick() {
           return removeProductOrder(product);
@@ -18151,6 +18162,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var OrderProductList = function OrderProductList(_ref) {
   var products = _ref.products,
+      requested = _ref.requested,
       removeProductOrder = _ref.removeProductOrder;
   return _react2.default.createElement(
     'div',
@@ -18159,6 +18171,7 @@ var OrderProductList = function OrderProductList(_ref) {
       return _react2.default.createElement(_OrderProduct2.default, {
         key: product.get('id'),
         product: product,
+        requested: requested,
         removeProductOrder: removeProductOrder
       });
     })

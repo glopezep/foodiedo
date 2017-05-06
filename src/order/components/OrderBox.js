@@ -11,17 +11,22 @@ class OrderBox extends Component {
   constructor(props) {
     super(props)
     this.removeProductOrder = this.props.actions.removeProductOrder.bind(this);
+    this.requestOrder = this.props.actions.requestOrder.bind(this);
   }
   render() {
     return (
       <div>
         <OrderProductList
           products={this.props.order.get('entities')}
+          requested={this.props.order.get('requested')}
           removeProductOrder={this.removeProductOrder}
         />
         <TotalPrice totalPrice={this.props.order.get('totalPrice')} />
         <Link to="/waiting">
-          <Button>Order</Button>
+          {this.props.order.get('requested') ?
+            <Button>Pay</Button> :
+            <Button onClick={() => this.requestOrder()}>Order</Button>
+          }
         </Link>
       </div>
     )
