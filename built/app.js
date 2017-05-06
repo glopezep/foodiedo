@@ -17594,15 +17594,18 @@ var _Home = __webpack_require__(126);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _Waiting = __webpack_require__(319);
 
-// import Waiting from './Waiting';
+var _Waiting2 = _interopRequireDefault(_Waiting);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Pages = function Pages() {
   return _react2.default.createElement(
     'main',
     { className: 'App' },
-    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default })
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/waiting', component: _Waiting2.default })
   );
 };
 
@@ -17676,11 +17679,12 @@ function order() {
 
   switch (action.type) {
     case _actions.ADD_PRODUCT_TO_ORDER:
+      console.log(action.payload.toJS());
       return (0, _immutable.Map)({
         requested: false,
         paid: false,
         entities: state.get('entities').push(action.payload),
-        totalPrice: state.get('totalPrice') + action.payload.get('totalPrice')
+        totalPrice: state.get('totalPrice') + action.payload.get('price')
       });
     case _actions.REMOVE_PRODUCT_OF_ORDER:
       return (0, _immutable.Map)({
@@ -17689,7 +17693,7 @@ function order() {
         entities: state.get('entities').filter(function (product) {
           return product.get('id') !== action.payload.get('id');
         }),
-        totalPrice: state.get('totalPrice') - action.payload.get('totalPrice')
+        totalPrice: state.get('totalPrice') - action.payload.get('price')
 
       });
     case _actions.REQUEST_ORDER:
@@ -17955,12 +17959,12 @@ var initialState = (0, _immutable.fromJS)({
   order: {
     requested: false,
     paid: false,
-    entities: [{ id: 1, name: 'Orange Juice', price: 120, cant: 1 }, { id: 2, name: 'Lemon Juice', price: 120, cant: 1 }, { id: 3, name: 'Apple Juice', price: 120, cant: 1 }],
-    totalPrice: 360
+    entities: [],
+    totalPrice: 0
   }
 });
 
-var store = (0, _redux.createStore)(_reducers2.default, initialState, (0, _redux.applyMiddleware)(_reduxThunk2.default));
+var store = (0, _redux.createStore)(_reducers2.default, initialState, (0, _redux.applyMiddleware)(logger, _reduxThunk2.default));
 
 (0, _reactDom.render)(_react2.default.createElement(
   _reactRedux.Provider,
@@ -17993,9 +17997,15 @@ var _redux = __webpack_require__(35);
 
 var _reactRedux = __webpack_require__(44);
 
+var _reactRouterDom = __webpack_require__(71);
+
 var _OrderProductList = __webpack_require__(125);
 
 var _OrderProductList2 = _interopRequireDefault(_OrderProductList);
+
+var _TotalPrice = __webpack_require__(315);
+
+var _TotalPrice2 = _interopRequireDefault(_TotalPrice);
 
 var _Button = __webpack_require__(46);
 
@@ -18037,10 +18047,15 @@ var OrderBox = function (_Component) {
           products: this.props.order.get('entities'),
           removeProductOrder: this.removeProductOrder
         }),
+        _react2.default.createElement(_TotalPrice2.default, { totalPrice: this.props.order.get('totalPrice') }),
         _react2.default.createElement(
-          _Button2.default,
-          null,
-          'Order'
+          _reactRouterDom.Link,
+          { to: '/waiting' },
+          _react2.default.createElement(
+            _Button2.default,
+            null,
+            'Order'
+          )
         )
       );
     }
@@ -18179,9 +18194,9 @@ var _Header = __webpack_require__(136);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _HeaderBar = __webpack_require__(137);
+var _WhiteHeader = __webpack_require__(318);
 
-var _HeaderBar2 = _interopRequireDefault(_HeaderBar);
+var _WhiteHeader2 = _interopRequireDefault(_WhiteHeader);
 
 var _Footer = __webpack_require__(135);
 
@@ -18228,7 +18243,7 @@ var Home = function Home() {
       _react2.default.createElement(
         _BodyLeft2.default,
         null,
-        _react2.default.createElement(_HeaderBar2.default, null),
+        _react2.default.createElement(_WhiteHeader2.default, null),
         _react2.default.createElement(
           'div',
           { className: _Pages2.default.container },
@@ -18239,7 +18254,7 @@ var Home = function Home() {
       _react2.default.createElement(
         _BodyRight2.default,
         null,
-        _react2.default.createElement(_HeaderBar2.default, null),
+        _react2.default.createElement(_WhiteHeader2.default, null),
         _react2.default.createElement(_OrderBox2.default, null)
       )
     ),
@@ -18331,6 +18346,7 @@ var CurrentProduct = function (_Component) {
             _react2.default.createElement(
               'span',
               { className: _CurrentProduct2.default.price },
+              'RD$',
               currentProduct.get('price')
             )
           ),
@@ -18386,19 +18402,24 @@ var _Product2 = _interopRequireDefault(_Product);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Product = function Product(props) {
+var Product = function Product(_ref) {
+  var product = _ref.product,
+      setCurrentProduct = _ref.setCurrentProduct;
   return _react2.default.createElement(
     'article',
-    { className: _Product2.default.container },
+    { className: _Product2.default.container, onClick: function onClick() {
+        return setCurrentProduct(product);
+      } },
     _react2.default.createElement(
       'span',
       null,
-      'Orange Juice'
+      product.get('name')
     ),
     _react2.default.createElement(
       'span',
       null,
-      'RD$120'
+      'RD$',
+      product.get('price')
     )
   );
 };
@@ -18416,9 +18437,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(44);
+
+var _redux = __webpack_require__(35);
 
 var _ProductList = __webpack_require__(130);
 
@@ -18432,18 +18459,63 @@ var _ProductBox = __webpack_require__(307);
 
 var _ProductBox2 = _interopRequireDefault(_ProductBox);
 
+var _actions = __webpack_require__(45);
+
+var actions = _interopRequireWildcard(_actions);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var ProductBox = function ProductBox() {
-  return _react2.default.createElement(
-    'div',
-    { className: _ProductBox2.default.container },
-    _react2.default.createElement(_ProductList2.default, null),
-    _react2.default.createElement(_ProductPagination2.default, null)
-  );
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-exports.default = ProductBox;
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ProductBox = function (_Component) {
+  _inherits(ProductBox, _Component);
+
+  function ProductBox(props) {
+    _classCallCheck(this, ProductBox);
+
+    var _this = _possibleConstructorReturn(this, (ProductBox.__proto__ || Object.getPrototypeOf(ProductBox)).call(this, props));
+
+    _this.setCurrentProduct = _this.props.actions.setCurrentProduct.bind(_this);
+    return _this;
+  }
+
+  _createClass(ProductBox, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: _ProductBox2.default.container },
+        _react2.default.createElement(_ProductList2.default, {
+          products: this.props.productList.get('visibleProducts'),
+          setCurrentProduct: this.setCurrentProduct
+        }),
+        _react2.default.createElement(_ProductPagination2.default, null)
+      );
+    }
+  }]);
+
+  return ProductBox;
+}(_react.Component);
+
+function mapStateToProps(state) {
+  return {
+    productList: state.get('productList')
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: (0, _redux.bindActionCreators)(actions, dispatch)
+  };
+}
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ProductBox);
 
 /***/ }),
 /* 130 */
@@ -18470,16 +18542,19 @@ var _ProductList2 = _interopRequireDefault(_ProductList);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var ProductList = function ProductList(props) {
+var ProductList = function ProductList(_ref) {
+  var products = _ref.products,
+      setCurrentProduct = _ref.setCurrentProduct;
   return _react2.default.createElement(
     'div',
     { className: _ProductList2.default.container },
-    _react2.default.createElement(_Product2.default, null),
-    _react2.default.createElement(_Product2.default, null),
-    _react2.default.createElement(_Product2.default, null),
-    _react2.default.createElement(_Product2.default, null),
-    _react2.default.createElement(_Product2.default, null),
-    _react2.default.createElement(_Product2.default, null)
+    products.map(function (product) {
+      return _react2.default.createElement(_Product2.default, {
+        key: product.get('id'),
+        product: product,
+        setCurrentProduct: setCurrentProduct
+      });
+    })
   );
 };
 
@@ -18685,37 +18760,7 @@ var Header = function Header(props) {
 exports.default = Header;
 
 /***/ }),
-/* 137 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Shared = __webpack_require__(22);
-
-var _Shared2 = _interopRequireDefault(_Shared);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var HeaderBar = function HeaderBar(props) {
-  return _react2.default.createElement(
-    'header',
-    { className: _Shared2.default.headerBar },
-    props.children
-  );
-};
-
-exports.default = HeaderBar;
-
-/***/ }),
+/* 137 */,
 /* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20769,7 +20814,7 @@ exports = module.exports = __webpack_require__(16)(undefined);
 
 
 // module
-exports.push([module.i, "._196fofSl_NT7XC3Xth9rFV {\n  display: flex;\n  flex: 1;\n  padding: 1em;\n}\n\n._3GlEluQeo8Tk6EQf2V3OjL {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  margin-right: 1em;\n}\n\n.x33vwsm_wUqy0rURwyQjD {\n  width: 255px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD {\n  border: none;\n  background-color: #d95459;\n  color: #fff;\n  cursor: pointer;\n  font-size: .9em;\n  padding: 1em 0;\n  text-transform: uppercase;\n  width: 125px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD:hover {\n  background-color: #a64347;\n}\n\n._1OB4ZV6BHT2Wu-AkaLrDtH {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._1-XIDGjPQfqpr4t6-wcbVz {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._3xDBnaFrhDSnwdvUFh-Vw_ {\n  align-items: center;\n  background-color: #fff;\n  display: flex;\n  height: 50px;\n  justify-content: space-between;\n  margin-bottom: 1em;\n  padding: 0 1em;\n}\n", ""]);
+exports.push([module.i, "._196fofSl_NT7XC3Xth9rFV {\n  display: flex;\n  flex: 1;\n  padding: 1em;\n}\n\n._3GlEluQeo8Tk6EQf2V3OjL {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  margin-right: 1em;\n}\n\n.x33vwsm_wUqy0rURwyQjD {\n  width: 255px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD {\n  border: none;\n  background-color: #d95459;\n  color: #fff;\n  cursor: pointer;\n  font-size: .9em;\n  padding: 1em 0;\n  text-transform: uppercase;\n  width: 125px;\n}\n\n._3SXpLuOozFU8o-Kr_6FNwD:hover {\n  background-color: #a64347;\n}\n\n._1OB4ZV6BHT2Wu-AkaLrDtH {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._1-XIDGjPQfqpr4t6-wcbVz {\n  align-items: center;\n  background-color: #636f80;\n  color: white;\n  display: flex;\n  height: 50px;\n  padding: 0 1em;\n}\n\n._3H32-AZGXjgaY5hXoA04f {\n  align-items: center;\n  background-color: #fff;\n  display: flex;\n  height: 50px;\n  justify-content: space-between;\n  margin-bottom: 1em;\n  padding: 0 1em;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -20779,7 +20824,7 @@ exports.locals = {
 	"button": "_3SXpLuOozFU8o-Kr_6FNwD",
 	"footer": "_1OB4ZV6BHT2Wu-AkaLrDtH",
 	"header": "_1-XIDGjPQfqpr4t6-wcbVz",
-	"headerBar": "_3xDBnaFrhDSnwdvUFh-Vw_"
+	"whiteHeader": "_3H32-AZGXjgaY5hXoA04f"
 };
 
 /***/ }),
@@ -37433,6 +37478,213 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 315 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _TotalPrice = __webpack_require__(317);
+
+var _TotalPrice2 = _interopRequireDefault(_TotalPrice);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var TotalPrice = function TotalPrice(_ref) {
+  var totalPrice = _ref.totalPrice;
+  return _react2.default.createElement(
+    'article',
+    { className: _TotalPrice2.default.container },
+    _react2.default.createElement(
+      'span',
+      { className: _TotalPrice2.default.label },
+      'Total'
+    ),
+    _react2.default.createElement(
+      'span',
+      { className: _TotalPrice2.default.price },
+      'RD$',
+      totalPrice
+    )
+  );
+};
+
+exports.default = TotalPrice;
+
+/***/ }),
+/* 316 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(16)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "._1dN4lwSUnvCYJg_XmspU02 {\n  display: flex;\n  background-color: #636f80;\n  color: #fff;\n  justify-content: space-between;\n  line-height: 40px;\n  margin-bottom: 1em;\n  padding: 0 1em;\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"container": "_1dN4lwSUnvCYJg_XmspU02"
+};
+
+/***/ }),
+/* 317 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(316);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(18)(content, {"sourceMap":true});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js?modules!./TotalPrice.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js?modules!./TotalPrice.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 318 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Shared = __webpack_require__(22);
+
+var _Shared2 = _interopRequireDefault(_Shared);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var WhiteHeader = function WhiteHeader(props) {
+  return _react2.default.createElement(
+    'header',
+    { className: _Shared2.default.whiteHeader },
+    props.children
+  );
+};
+
+exports.default = WhiteHeader;
+
+/***/ }),
+/* 319 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Pages = __webpack_require__(304);
+
+var _Pages2 = _interopRequireDefault(_Pages);
+
+var _CurrentProduct = __webpack_require__(127);
+
+var _CurrentProduct2 = _interopRequireDefault(_CurrentProduct);
+
+var _Header = __webpack_require__(136);
+
+var _Header2 = _interopRequireDefault(_Header);
+
+var _WhiteHeader = __webpack_require__(318);
+
+var _WhiteHeader2 = _interopRequireDefault(_WhiteHeader);
+
+var _Footer = __webpack_require__(135);
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
+var _Body = __webpack_require__(132);
+
+var _Body2 = _interopRequireDefault(_Body);
+
+var _BodyLeft = __webpack_require__(133);
+
+var _BodyLeft2 = _interopRequireDefault(_BodyLeft);
+
+var _BodyRight = __webpack_require__(134);
+
+var _BodyRight2 = _interopRequireDefault(_BodyRight);
+
+var _ProductBox = __webpack_require__(129);
+
+var _ProductBox2 = _interopRequireDefault(_ProductBox);
+
+var _OrderBox = __webpack_require__(123);
+
+var _OrderBox2 = _interopRequireDefault(_OrderBox);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Waiting = function Waiting() {
+  return _react2.default.createElement(
+    'section',
+    { className: _Pages2.default.home },
+    _react2.default.createElement(
+      _Header2.default,
+      null,
+      _react2.default.createElement(
+        'p',
+        null,
+        'Header here...'
+      )
+    ),
+    _react2.default.createElement(
+      _Body2.default,
+      null,
+      _react2.default.createElement(
+        _BodyLeft2.default,
+        null,
+        _react2.default.createElement(_WhiteHeader2.default, null),
+        _react2.default.createElement('div', { className: _Pages2.default.container })
+      ),
+      _react2.default.createElement(
+        _BodyRight2.default,
+        null,
+        _react2.default.createElement(_WhiteHeader2.default, null),
+        _react2.default.createElement(_OrderBox2.default, null)
+      )
+    ),
+    _react2.default.createElement(_Footer2.default, null)
+  );
+};
+
+exports.default = Waiting;
 
 /***/ })
 /******/ ]);

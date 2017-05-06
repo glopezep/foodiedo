@@ -2,14 +2,15 @@ import React from 'react';
 import Product from './Product';
 import styles from './ProductList.css';
 
-const ProductList = props => (
+const ProductList = ({ products, setCurrentProduct }) => (
   <div className={styles.container}>
-    <Product />
-    <Product />
-    <Product />
-    <Product />
-    <Product />
-    <Product />
+    {products.map(product => (
+     <Product
+        key={product.get('id')}
+        product={product}
+        setCurrentProduct={setCurrentProduct}
+      />
+    ))}
   </div>
 );
 

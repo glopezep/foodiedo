@@ -52,11 +52,12 @@ function productList(state = map(), action) {
 function order(state = map(), action) {
   switch (action.type) {
     case ADD_PRODUCT_TO_ORDER:
+      console.log(action.payload.toJS());
       return map({
         requested: false,
         paid: false,
         entities: state.get('entities').push(action.payload),
-        totalPrice: state.get('totalPrice') + action.payload.get('totalPrice')
+        totalPrice: state.get('totalPrice') + action.payload.get('price')
       })
     case REMOVE_PRODUCT_OF_ORDER:
       return map({
@@ -65,7 +66,7 @@ function order(state = map(), action) {
         entities: state.get('entities').filter(product => {
           return product.get('id') !== action.payload.get('id')
         }),
-        totalPrice: state.get('totalPrice') - action.payload.get('totalPrice')
+        totalPrice: state.get('totalPrice') - action.payload.get('price')
 
       })
     case REQUEST_ORDER:

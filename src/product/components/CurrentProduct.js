@@ -19,7 +19,7 @@ class CurrentProduct extends Component {
         <footer className={styles.footer}>
           <div className={styles.product}>
             <span className={styles.name}>{currentProduct.get('name')}</span>
-            <span className={styles.price}>{currentProduct.get('price')}</span>
+            <span className={styles.price}>RD${currentProduct.get('price')}</span>
           </div>
           <Button
             onClick={() => this.addProductToOrder(currentProduct)}

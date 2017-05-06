@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 import OrderProductList from './OrderProductList';
+import TotalPrice from './TotalPrice';
 import Button from '../../shared/components/Button';
 import * as actions from '../../actions';
 
@@ -17,7 +19,10 @@ class OrderBox extends Component {
           products={this.props.order.get('entities')}
           removeProductOrder={this.removeProductOrder}
         />
-        <Button>Order</Button>
+        <TotalPrice totalPrice={this.props.order.get('totalPrice')} />
+        <Link to="/waiting">
+          <Button>Order</Button>
+        </Link>
       </div>
     )
   }

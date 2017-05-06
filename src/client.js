@@ -52,16 +52,13 @@ const initialState = fromJS({
   order: {
     requested: false,
     paid: false,
-    entities: [
-      { id: 1, name: 'Orange Juice', price: 120, cant: 1},
-      { id: 2, name: 'Lemon Juice', price: 120, cant: 1},
-      { id: 3, name: 'Apple Juice', price: 120, cant: 1},
-    ],
-    totalPrice: 360,
+    entities: [],
+    totalPrice: 0,
   }
 });
 
 const store = createStore(reducers, initialState, applyMiddleware(
+  logger,
   thunk,
 ))
 
